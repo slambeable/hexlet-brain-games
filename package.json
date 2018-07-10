@@ -1,8 +1,8 @@
 {
   "name": "braingamesbyslambe",
   "version": "1.0.1",
-  "description": "",
-  "main": "brain-games.js",
+  "description": "Small game, coaching logic",
+  "main": "",
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build",
@@ -13,8 +13,14 @@
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
-    "files": [
+  "files": [
     "dist"
+  ],
+  "keywords": [
+    "braingames",
+    "brain",
+    "games",
+    "logic"
   ],
   "author": "slambeable",
   "license": "ISC",
@@ -23,5 +29,8 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.9"
   }
 }
