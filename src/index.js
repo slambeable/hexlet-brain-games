@@ -23,7 +23,7 @@ export const checkParity = (name) => {
       result += 1;
     } else {
       const answerCorrect = answer === 'yes' ? 'no' : 'yes';
-      return `${answer} is wrong answer ;(. Correct answer was ${answerCorrect}.\nLet's try again, Bill!`;
+      return `"${answer}" is wrong answer ;(. Correct answer was "${answerCorrect}".\nLet's try again, Bill!`;
     }
   }
   return `Congratulations, ${name}`;
