@@ -12,7 +12,7 @@ const checkParity = (name) => {
     const question = Math.round(Math.random() * 100);
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
-    const answerCorrect = isEven(randomNum);
+    const answerCorrect = isEven(question);
     if (answerCorrect === answer) {
       console.log('Correct!');
     } else {
