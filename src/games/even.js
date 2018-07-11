@@ -9,8 +9,8 @@ const checkParity = (name) => {
   const maxNumOfRound = 3;
 
   for (let i = 0; i !== maxNumOfRound; i += 1) {
-    const randomNum = Math.round(Math.random() * 100);
-    console.log(`Question: ${randomNum}`);
+    const question = Math.round(Math.random() * 100);
+    console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
     const answerCorrect = isEven(randomNum);
     if (answerCorrect === answer) {
