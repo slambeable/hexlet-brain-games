@@ -9,7 +9,7 @@ export const giveYourName = () => {
 export const helloBrainEven = () => console.log('Welcome to the Brain Games!\nAnswer "yes" if number even otherwise answer "no".\n');
 
 export const checkParity = (name) => {
-  for (let i = 0; i != 3; i++) {
+  for (let i = 0; i !== 3; i + 1) {
     const randomNum = Math.round(Math.random() * 100);
     console.log(`Question: ${randomNum}`);
     const answer = readlineSync.question('Your answer: ');
