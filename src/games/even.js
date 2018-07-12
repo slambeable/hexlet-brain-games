@@ -1,28 +1,17 @@
-import readlineSync from 'readline-sync';
-import giveYourName from '..';
+import gameLogic from '..';
+import { randomNum } from '../auxiliary';
 
-const helloBrainEven = () => console.log('Welcome to the Brain Games!\nAnswer "yes" if number even otherwise answer "no".\n');
+let questionForThisRound = 0;
 
-const isEven = num => (num % 2 === 0 ? 'yes' : 'no');
+const rules = 'Answer "yes" if number even otherwise answer "no".\n';
 
-const checkParity = (name) => {
-  const maxNumOfRound = 3;
-
-  for (let i = 0; i !== maxNumOfRound; i += 1) {
-    const question = Math.round(Math.random() * 100);
-    console.log(`Question: ${question}`);
-    const answer = readlineSync.question('Your answer: ');
-    const answerCorrect = isEven(question);
-    if (answerCorrect === answer) {
-      console.log('Correct!');
-    } else {
-      return `"${answer}" is wrong answer ;(. Correct answer was "${answerCorrect}".\nLet's try again, Bill!`;
-    }
-  }
-  return `Congratulations, ${name}`;
+const question = () => {
+  questionForThisRound = randomNum(100);
+  return questionForThisRound;
 };
 
-export default () => {
-  helloBrainEven();
-  console.log(checkParity(giveYourName()));
-};
+const isEven = num => num % 2 === 0;
+
+const correctAnswer = () => (isEven(questionForThisRound) ? 'yes' : 'no');
+
+export default () => gameLogic(rules, question, correctAnswer);

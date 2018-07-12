@@ -1,8 +1,6 @@
-import giveYourName from '..';
-
-const helloBrainGames = () => console.log('Welcome to the Brain Games!');
+import { questionName } from '../auxiliary';
 
 export default () => {
-  helloBrainGames();
-  giveYourName();
+  console.log('Welcome to the Brain Games!');
+  questionName();
 };
