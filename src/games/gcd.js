@@ -1,23 +1,12 @@
-import gameLogic from '..';
-import { randomNum } from '../auxiliary';
+import gameEngine from '..';
+import randomNum from '../utils';
 
-let firstNum = 0;
-let secondNum = 0;
+const description = 'What is the result of the expression?\n';
 
-const rules = 'Find the greatest common divisor of given numbers\n';
+const isLess = (num1, num2) => num1 < num2;
 
-const setOfValuesForThisOperation = () => {
-  firstNum = randomNum(100);
-  secondNum = randomNum(100);
-};
-
-const question = () => {
-  setOfValuesForThisOperation();
-  return `${firstNum} ${secondNum}`;
-};
-
-const correctAnswer = () => {
-  const theSmallestNumber = firstNum < secondNum ? firstNum : secondNum;
+const findGCD = (firstNum, secondNum) => {
+  const theSmallestNumber = isLess(firstNum, secondNum) ? firstNum : secondNum;
 
   for (let i = theSmallestNumber; ; i -= 1) {
     const firstDividend = firstNum % i;
@@ -28,4 +17,13 @@ const correctAnswer = () => {
   }
 };
 
-export default () => gameLogic(rules, question, correctAnswer);
+const gameLogic = () => {
+  const firstNum = randomNum(100);
+  const secondNum = randomNum(100);
+
+  const question = `${firstNum} ${secondNum}`;
+  const correctAnswer = findGCD(firstNum, secondNum);
+  return [question, correctAnswer];
+};
+
+export default () => gameEngine(description, gameLogic);

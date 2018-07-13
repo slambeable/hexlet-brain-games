@@ -1,17 +1,14 @@
-import gameLogic from '..';
-import { randomNum } from '../auxiliary';
+import gameEngine from '..';
+import randomNum from '../utils';
 
-let questionForThisRound = 0;
-
-const rules = 'Answer "yes" if number even otherwise answer "no".\n';
-
-const question = () => {
-  questionForThisRound = randomNum(100);
-  return questionForThisRound;
-};
+const description = 'Answer "yes" if number even otherwise answer "no".\n';
 
 const isEven = num => num % 2 === 0;
 
-const correctAnswer = () => (isEven(questionForThisRound) ? 'yes' : 'no');
+const gameLogic = () => {
+  const question = randomNum(100);
+  const correctAnswer = (isEven(question) ? 'yes' : 'no');
+  return [question, correctAnswer];
+};
 
-export default () => gameLogic(rules, question, correctAnswer);
+export default () => gameEngine(description, gameLogic);

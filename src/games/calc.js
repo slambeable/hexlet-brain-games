@@ -1,25 +1,9 @@
-import gameLogic from '..';
-import { randomNum } from '../auxiliary';
+import gameEngine from '..';
+import randomNum from '../utils';
 
-let firstNum = 0;
-let secondNum = 0;
-let randomMathOperations = 0;
-const mathOperations = ['+', '-', '*'];
+const description = 'What is the result of the expression?\n';
 
-const rules = 'What is the result of the expression?\n';
-
-const setOfValuesForThisOperation = () => {
-  firstNum = randomNum(10);
-  secondNum = randomNum(10);
-  randomMathOperations = randomNum(2);
-};
-
-const question = () => {
-  setOfValuesForThisOperation();
-  return `${firstNum} ${mathOperations[randomMathOperations]} ${secondNum}`;
-};
-
-const correctAnswer = () => {
+const solutionOfEquation = (firstNum, secondNum, randomMathOperations) => {
   switch (randomMathOperations) {
     case 0:
       return String(firstNum + secondNum);
@@ -30,4 +14,15 @@ const correctAnswer = () => {
   }
 };
 
-export default () => gameLogic(rules, question, correctAnswer);
+const gameLogic = () => {
+  const firstNum = randomNum(10);
+  const secondNum = randomNum(10);
+  const randomMathOperations = randomNum(3, 0);
+  const mathOperations = ['+', '-', '*'];
+
+  const question = `${firstNum} ${mathOperations[randomMathOperations]} ${secondNum}`;
+  const correctAnswer = solutionOfEquation(firstNum, secondNum, randomMathOperations);
+  return [question, correctAnswer];
+};
+
+export default () => gameEngine(description, gameLogic);
