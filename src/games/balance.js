@@ -28,7 +28,7 @@ const differenceBetweenSumsOfTwoNumbers = (num1, num2) => {
 };
 
 const theBalanceNumber = (num, numLength) => {
-  const numOfTheLargDigit = stringOfTheLargestDigits(num, numLength);;
+  const numOfTheLargDigit = stringOfTheLargestDigits(num, numLength);
   const diffBetweenSum = differenceBetweenSumsOfTwoNumbers(num, numOfTheLargDigit);
   let result = '';
 
