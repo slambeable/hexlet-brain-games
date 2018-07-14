@@ -12,7 +12,7 @@ const findGCD = (firstNum, secondNum) => {
     const firstDividend = firstNum % i;
     const secondDividend = secondNum % i;
     if (firstDividend + secondDividend === 0) {
-      return String(i);
+      return i;
     }
   }
 };
@@ -22,7 +22,8 @@ const gameLogic = () => {
   const secondNum = randomNum(100);
 
   const question = `${firstNum} ${secondNum}`;
-  const correctAnswer = findGCD(firstNum, secondNum);
+  const findGCDToString = String(findGCD(firstNum, secondNum));
+  const correctAnswer = findGCDToString;
   return [question, correctAnswer];
 };
 
