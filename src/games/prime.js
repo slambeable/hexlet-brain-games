@@ -3,12 +3,16 @@ import randomNum from '../utils';
 
 const description = 'Answer "yes" if number prime otherwise answer "no".\n';
 
-const isEven = num => num === 0;
-
 const isPrimeNumber = (num) => {
-  for (let i = 2; i !== num; i += 1) {
+  const halfNum = Math.floor(num / 2);
+
+  if (num === 1) {
+    return false;
+  }
+
+  for (let i = 2; i <= halfNum; i += 1) {
     const number = num % i;
-    if (isEven(number)) {
+    if (number === 0) {
       return false;
     }
   }
