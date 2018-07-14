@@ -17,7 +17,10 @@ start5:
 	npm run babel-node -- src/bin/brain-balance.js
 
 start6:
-	npm run babel-node -- src/bin/brain-progression.js	
+	npm run babel-node -- src/bin/brain-progression.js
+	
+start7:
+	npm run babel-node -- src/bin/brain-prime.js
 
 publish:
 	npm publish
