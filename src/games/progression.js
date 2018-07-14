@@ -1,8 +1,6 @@
 import gameEngine from '..';
 import randomNum from '../utils';
 
-
-
 const description = 'What is the result of the expression?\n';
 
 const getArithmeticProgression = () => {
@@ -28,7 +26,7 @@ const getArithmeticProgression = () => {
     }
   }
   return [missNumber, arithmeticProgression];
-}
+};
 
 const gameLogic = () => {
   const [missNumber, arithmeticProgression] = getArithmeticProgression();
