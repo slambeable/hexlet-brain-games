@@ -6,7 +6,7 @@ const description = 'Answer "yes" if number prime otherwise answer "no".\n';
 const isPrimeNumber = (num) => {
   const halfNum = Math.floor(num / 2);
 
-  if (num === 1) {
+  if (num <= 1) {
     return false;
   }
 
