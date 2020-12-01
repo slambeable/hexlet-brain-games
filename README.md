@@ -28,5 +28,3 @@ Just enter name of the game in console:
 Examples:
 
 `brain-calc`
-
-[![asciicast](https://asciinema.org/a/DtKFBDq8gcSsAwCIJeKQKFwRu.png)](https://asciinema.org/a/DtKFBDq8gcSsAwCIJeKQKFwRu)
